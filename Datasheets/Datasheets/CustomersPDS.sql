@@ -1,11 +1,11 @@
 ﻿MERGE INTO Customers AS Target 
 USING (VALUES 
-        (1, 'Ali', 'Delavari', 'Ali.delavari@test.com', 00848485854, 'Tech',7000000), 
-        (2, 'Jack', 'Jonson', 'Jack.jonson@test.com', 00185485418, 'Medcare',85000000), 
-        (3, 'Tom', 'Jingelberry', 'Tj@test.com', 00485148525, 'DomainX',950000000)
+        (1, N'Ali', N'Delavari', N'Ali.delavari@test.com', 00848485854, N'Tech',7000000), 
+        (2, N'Jack', N'Jonson', N'Jack.jonson@test.com', 00185485418, N'Medcare',85000000), 
+        (3, N'Tom', N'Jingelberry', N'Tj@test.com', 00485148525, N'DomainX',950000000)
 ) 
-AS Source (CostumerNum, FirstName, LastName, Email, PhoneNumber, Domain, InvestCap) 
-ON Target.CostumerNum = Source.CostumerNum 
+AS Source (CustomerID, FirstName, LastName, Email, PhoneNumber, Industry, InvestCap) 
+ON Target.CustomerID = Source.CustomerID 
 WHEN NOT MATCHED BY TARGET THEN 
-INSERT (FirstName, LastName, Email, PhoneNumber, Domain, InvestCap) 
-VALUES (FirstName, LastName, Email, PhoneNumber, Domain, InvestCap);
+INSERT (CustomerID, FirstName, LastName, Email, PhoneNumber, Industry, InvestCap) 
+VALUES (CustomerID, FirstName, LastName, Email, PhoneNumber, Industry, InvestCap);
