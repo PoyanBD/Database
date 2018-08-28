@@ -13,10 +13,10 @@ namespace CustomerDataBase.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class masterEntities : DbContext
+    public partial class DatasheetsEntities : DbContext
     {
-        public masterEntities()
-            : base("name=masterEntities")
+        public DatasheetsEntities()
+            : base("name=DatasheetsEntities")
         {
         }
     
@@ -25,6 +25,6 @@ namespace CustomerDataBase.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Customers> Customers { get; set; }
+        public virtual DbSet<Customer> Customers { get; set; }
     }
 }

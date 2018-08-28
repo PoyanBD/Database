@@ -12,14 +12,14 @@ namespace CustomerDataBase.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Customers
+    public partial class Customer
     {
-        public int CustomerID { get; set; }
+        public int CostumerNumber { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
         public Nullable<int> PhoneNumber { get; set; }
-        public string Industry { get; set; }
+        public string Domains { get; set; }
         public Nullable<int> InvestCap { get; set; }
     }
 }
